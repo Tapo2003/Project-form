@@ -4,7 +4,7 @@
 $serverName = "localhost";
 $DBusername = "root";
 $password = "";
-$database = "mulipleform";
+$database = "acuret";
 
 
 # Database Variable connection handle

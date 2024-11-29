@@ -37,26 +37,37 @@
       </div> -->
       <div class="wrapper">
          <div id="content-page" class="content-page">
-            <div class="container-fluid" style = "width:900px">
+            <div class="container-fluid" style = "width:1000px">
                <div class="row">
-                  <div class="col-sm-12 col-lg-12"  >                
-                     <div class="iq-card">
+                  <div class="col-sm-12 col-lg-12" >                
+                     <div class="iq-card" >
                         <div class="iq-card-header d-flex justify-content-between">
                            
                         </div>
                         <div class="iq-card-body">
                            
-                            <form id = "">
+                            <form id = "ProcessUserInput" class= "ProcessUserInput">
                                 <div class="form-row">
-                                    <div class="col-lg-6" style="float:right">
-                                        <img id="userimage" name="userimage" src="assets/images/user/1.jpg" class="img-fluid rounded mr-3" alt="user" width="150px" height="70px">      
+                                    <input type="hidden" id="picture_hidden_tag" name="picture_hidden_tag" value="F">
+                                    <div class="col-lg-6" style = "margin-top:17    0px">
+                                        <label>Add Image</label>
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="userfile" name="files[]" onchange="preveiwImage(this)">
+
+                                          
+
+                                          <label class="custom-file-label">Choose file</label>
+                                       </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <img id="userimage" name="userimage" src="assets/images/user/1.jpg" class="img-fluid rounded mr-3" alt="user" width="150px" height="70px" style = "float:right;margin-top:50px">      
                                     </div>
                                  </div>
 
                                 <br><br><div class="form-row">
                                     <div class="col-md-12 mb-3">
                                         <label>Select Membership Type</label>
-                                        <select class="form-control form-control-sm mb-3">
+                                        <select class="form-control form-control-sm mb-3" id = "memebership_type" name = "memebership_type">
                                             <option selected=""></option>
                                             <option value="Student">Student</option>
                                             <option value="Ordinary">Ordinary</option>
@@ -66,16 +77,16 @@
                                         </div>
                                     </div>
                                 <div>
-                                    <h3 style = "text-align:center;margin-top:30px">PERSONAL INFORMATION</h3>
+                                    <h3 style = "text-align:center;margin-top:30px;font-weight:bold;color:black">PERSONAL INFORMATION</h3>
                                 </div>
                                 <br><br><div class="form-row">           
                                     <div class="col-md-6 mb-3">
                                         <label>First/Given Name</label>
-                                        <input type="text" class="form-control" id = "giveName" name = "giveName">
+                                        <input type="text" class="form-control" id = "given_name" name = "given_name">
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label>Surname.</label>
-                                        <input type="text" class="form-control" id ="surName" name = "surName" required>
+                                        <input type="text" class="form-control" id ="sur_name" name = "sur_name" required>
                                     </div> 
                                 </div> 
 
@@ -86,19 +97,21 @@
                                     </div> 
                                     <div class="col-md-6 mb-3">
                                         <label>Maiden Name</label>
-                                        <input type="text" class="form-control" id = "maidenName" name = "maidenName" required>
+                                        <input type="text" class="form-control" id = "maiden_name" name = "maiden_name" required>
                                     </div>
                                 </div> 
 
                               <div class="iq-card-body">
                                  <p>Gender</p>
                                  <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="customRadio6" name="customRadio-1" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio6"> Male </label>
+                                    
+                                    <input type="radio" id="male" name="gender" class="custom-control-input" value = "male">
+                                    <!-- id="blind" name="specialapplicant" value=     "blind" -->
+                                    <label class="custom-control-label" for="male"> Male </label>
                                  </div>
                                  <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="customRadio7" name="customRadio-1" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio7"> 
+                                    <input type="radio" id="female" name="gender" class="custom-control-input" value = "female">
+                                    <label class="custom-control-label" for="female"> 
                                        Female </label>
                                  </div>
                                  
@@ -107,11 +120,11 @@
                               <div class="form-row">
                                 <div class="col-md-6 md-3">
                                     <label for="exampleInputdate">Date of Birth</label>
-                                    <input type="date" class="form-control" id="exampleInputdate" value="2019-12-18"/>
+                                    <input type="date" class="form-control" id="date_of_birth"  name = "date_of_birth"/>
                                  </div>
                                  <div class="col-md-6 md-3" >
                                     <label>Nationality</label>
-                                    <select class="form-control form-control-sm mb-3" style = "height:40px">
+                                    <select class="form-control form-control-sm mb-3" style = "height:40px" id = "nationality" name = "nationality">
                                         <option selected=""></option>
                                         <option value="nigeria">Nigeria</option>
                                         <option value="others">Others</option>
@@ -121,7 +134,7 @@
                               <div class="form-row">
                                 <div class="col-md-6 md-3">
                                     <label>Country of residence</label>
-                                    <select class="form-control form-control-sm mb-3" style = "height:40px">
+                                    <select class="form-control form-control-sm mb-3" style = "height:40px" id = "country_of_residence" name = "country_of_residence">
                                         <option selected=""></option>
                                         <option value="nigeria">Nigeria</option>
                                         <option value="others">Others</option>
@@ -154,7 +167,7 @@
 
                                 <div class="col-md-6 mb-3">
                                     <label>Address 2.</label>
-                                    <input type="text" class="form-control" id ="courseDesc" name = "courseDesc" required>
+                                    <input type="text" class="form-control" id ="address2" name = "address2" required>
                                 </div> 
                               </div>
 
@@ -172,12 +185,12 @@
                               <div class="form-row">
                                 <div class="col-md-6 md-3">
                                     <label>Zip or Postal Code.</label>
-                                    <input type="text" class="form-control" id ="zipCode" name = "zipCode" required>
+                                    <input type="text" class="form-control" id ="zip_code" name = "zip_code" required>
                                 </div>
 
                                 <div class="col-md-6 md-3">
                                     <label>Country</label>
-                                    <select class="form-control form-control-sm mb-3" style = "height:40px">
+                                    <select class="form-control form-control-sm mb-3" style = "height:40px" name = "country" id = "country">
                                         <option selected=""></option>
                                         <option value="nigeria">Nigeria</option>
                                         <option value="others">Others</option>
@@ -186,7 +199,7 @@
                               </div>
 
                               <br><div>
-                                 <h3 style = "text-align:center;margin-top:30px">ADDRESS</h3>
+                                 <h3 style = "text-align:center;margin-top:30px;color:black;font-weight:bold">ADDRESS</h3>
                               </div>
 
                               <br><br><div class="form-row">
@@ -209,149 +222,109 @@
                               </div>
                               
                               <div>
-                                 <h4 style = "text-align:center;margin-top:30px">EMAIL ADDRESS (We'll never share your email with anyone else)</h4>
+                                 <h4 style = "text-align:center;margin-top:30px;font-weight:bold;color:black">EMAIL ADDRESS <span style  = "color:red;font-weight:normal">(We'll never share your email with anyone else)</span></h4>
                               </div>
 
                               
                               <br><br><div class="form-row">
                                 <div class="col-md-6 md-3">
                                     <label>Personal email.</label>
-                                    <input type="text" class="form-control" id ="personEmail" name = "personEmail" required>
+                                    <input type="text" class="form-control" id ="personal_email" name = "personal_email" required>
                                 </div>
 
                                 <div class="col-md-6 mb-3">
                                     <label>Work email.</label>
-                                    <input type="text" class="form-control" id ="workEmail" name = "workEmail" required>
+                                    <input type="text" class="form-control" id ="work_email" name = "work_email" required>
                                 </div> 
                               </div>
 
-                              <div>
-                                 <h4 style = "text-align:center;margin-top:30px">ABOUT YOUR INTEREST IN LABORATORY ANIMAL WELFARE</h4>
-
-                                 <br><p style = "text-align:center;color:red;font-size:15px">Education: For each degree obtained, please provide:</p>
-                              </div>
-
+                                <div>
+                                    <h4 style = "text-align:center;margin-top:30px;font-weight:bold;color:black">ABOUT YOUR INTEREST IN LABORATORY ANIMAL WELFARE</h4>
+                                    <br><p style = "text-align:center;color:red;font-size:15px;font-weight:bold">Education: For each degree obtained, please provide:</p>
+                                </div>
                               <div class="form-row">
                                 <div class="col-md-6 md-3">
                                     <label>Institution.</label>
-                                    <input type="text" class="form-control" id ="institution" name = "institution" required>
+                                    <input type="text" class="form-control" id ="institutionDegree1" name = "institutionDegree[]" required>
                                 </div>
-
                                 <div class="col-md-6 mb-3">
                                     <label>Place.</label>
-                                    <input type="text" class="form-control" id ="place" name = "place" required>
+                                    <input type="text" class="form-control" id ="place1" name = "place[]" required>
                                 </div> 
                               </div>
 
                               <br><br><div class="form-row">
                                 <div class="col-md-6 md-3">
                                     <label>Country.</label>
-                                    <input type="text" class="form-control" id ="country" name = "country" required>
+                                    <input type="text" class="form-control" id ="student_country1" name = "student_country[]" required>
                                 </div>
 
                                 <div class="col-md-6 md-3">
                                     <label for="exampleInputdate">Year of Graduation</label>
-                                    <input type="date" class="form-control" id="yearOfGraduation" name = "yearOfGraduation" value="2019-12-18"/>
+                                    <input type="date" class="form-control" id="yearOfGraduation1" name = "yearOfGraduation[]"/>
                                  </div>
                               </div>
 
+                              <div class="add" id = "add">
+                                
+                              </div>
 
+                                <br><div class="form-row">
+                                    <div class="col"><br>
+                                        <button type="button" name="save" class="btn btn-success" onclick = "addEducation()" style = "margin-top:-60px;width:80px">Add</button>
+
+                                        <!-- <div class="delete" id = "delete">
+                                        </div> -->
+
+                                    </div>                                    
+                                </div>
                               <br><br><div class="form-row">
-                                <div class="col-md-12 md-3">
-                                    <label>Other Qualifications and/or Fellowship.</label>
-                                    <input type="text" class="form-control" id ="otherQualifications" name = "otherQualifications" required>
-                                </div>
-
-                                <div class="col-md-12 md-3">
-                                    <label>Are you currently undertaking study/training?</label>
-                                    <select class="form-control form-control-sm mb-3" style = "height:40px">
-                                        <option selected="Yes/No"></option>
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                    </select>
-                                </div>
-                              </div>
-                              
-                              <div class="iq-card-body">
-                                 <p>If YES, Course/Programme name</p>
-                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="customRadio8" name="customRadio-1" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio8"> Full time </label>
-                                 </div>
-                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="customRadio9" name="customRadio-1" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio9"> 
-                                    part time </label>
-                                 </div>
-                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="customRadio8" name="customRadio-1" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio8"> Distance </label>
-                                 </div>
-                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="customRadio9" name="customRadio-1" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio9"> 
-                                       Other </label>
-                                 </div>
-                                 <br><br><div class="form-row">
                                     <div class="col-md-12 md-3">
-                                        <label>Do you use/care for animals as part of your current daily work schedule?</label>
-                                        <select class="form-control form-control-sm mb-3" style = "height:40px">
+                                        <label>Other Qualifications and/or Fellowship.</label>
+                                        <input type="text" class="form-control" id ="other_qualifications" name = "other_qualifications" required>
+                                    </div>
+
+                                    <div class="col-md-12 md-3">
+                                        <br><label>Are you currently undertaking study/training?</label>
+                                        <select class="form-control form-control-sm mb-3" style = "height:40px" id = "current_undertaking_status" name = "current_undertaking_status">
                                             <option selected="Yes/No"></option>
                                             <option value="yes">Yes</option>
                                             <option value="no">No</option>
                                         </select>
                                     </div>
                                 </div>
+                              
+                              <!-- <div class="iq-card-body" id = "currently_undertaking">
                                  
-                                <div class="form-row">
-                                    <div class="col-md-6 md-3" style = "margin-top:25px">
-                                        <label>If YES, please indicate type(s) of animals</label>
-                                        <select class="form-control form-control-sm mb-3" style = "height:40px">
-                                            <option selected=""></option>
-                                            <option value="nigeria">Laboratory animals</option>
-                                            <option value="others"> Farm animals</option>
-                                            <option value="nigeria">Companion animals</option>
-                                            <option value="others"> Sports animals</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label>If NO, please provide a statement of your interest in laboratory animals.</label>
-                                        <input type="text" class="form-control" id ="courseDesc" name = "courseDesc" required>
-                                    </div> 
+                              </div> -->
+                                 
+                                <div class="form-row" id = "undertaken_form">
+                                    
                                 </div>
 
-                              </div>
-
-                              <br><br><div class="form-row">
+                              <!-- </div> -->
+                                <div class="form-row">
                                     <div class="col-md-12 md-3">
                                         <label>Have you used/cared for laboratory animals as part of your daily work schedule in the 
                                         past?</label>
-                                        <select class="form-control form-control-sm mb-3" style = "height:40px">
+                                        <select class="form-control form-control-sm mb-3" style = "height:40px" id = "care_laboratory_animals" name = "care_laboratory_animals">
                                             <option selected="Yes/No"></option>
                                             <option value="yes">Yes</option>
                                             <option value="no">No</option>
                                         </select>
                                     </div>
+                                    
                                 </div>
 
-                                <div class="form-row">
-                                    <div class="col-md-12 md-3">
-                                        <label>If yes, please state Institution, Place and dates</label>
-                                        <select class="form-control form-control-sm mb-3" style = "height:40px">
-                                            <option selected=""></option>
-                                            <option value="nigeria">Institution</option>
-                                            <option value="others"> Place</option>
-                                            <option value="nigeria">Duration</option>
-                                            
-                                        </select>
-                                    </div>
+                                <div class="form-row" id = "care_laboratory_animals_form">
+                                  
                                     
                                 </div>
 
                                 <br><br><div class="form-row">
                                     <div class="col-md-12 md-3">
                                         <label>Have attended any laboratory animal welfare training?</label>
-                                        <select class="form-control form-control-sm mb-3" style = "height:40px">
+                                        <select class="form-control form-control-sm mb-3" style = "height:40px" id = "attended_laboratory_animal" name = "attended_laboratory_animal">
                                             <option selected="Yes/No"></option>
                                             <option value="yes">Yes</option>
                                             <option value="no">No</option>
@@ -359,24 +332,15 @@
                                     </div>
                                 </div>
                                 
-                                <div class="form-row">
-                                    <div class="col-md-12 md-3">
-                                        <label>If YES, please state below and upload your Certificate as supporting document.</label>
-                                        <select class="form-control form-control-sm mb-3" style = "height:40px">
-                                            <option selected=""></option>
-                                            <option value="nigeria">Event</option>
-                                            <option value="others"> Date</option>
-                                            <option value="nigeria">Place</option>
-                                            
-                                        </select>
-                                    </div>
+                                <div class="form-row" id = "used_care_laboratory_form">
+                                    
                                     
                                 </div>
 
                                 <br><br><div class="form-row">
                                     <div class="col-md-12 md-3">
                                         <label>Does your Institution have an animal facility?</label>
-                                        <select class="form-control form-control-sm mb-3" style = "height:40px">
+                                        <select class="form-control form-control-sm mb-3" style = "height:40px" id = "institution_animal_facitlity" name = "institution_animal_facitlity">
                                             <option selected="Yes/No"></option>
                                             <option value="yes">Yes</option>
                                             <option value="no">No</option>
@@ -385,11 +349,11 @@
                                 </div>
 
                                 <div>
-                                    <h4 style = "text-align:center;margin-top:30px">SUPPORTING DOCUMENTS</h4>
-                                    <p>(a) *Please provide full names, email address and telephone of two (2) referees</p>
+                                    <h4 style = "text-align:center;margin-top:30px;font-size:30px;font-style:italic;text-decoration: underline;font-weight:bold">SUPPORTING DOCUMENTS</h4>
+                                    <p style = "font-size:18px;font-style:bold;margin-top:15px;">(a) *Please provide full names, email address and telephone of two (2) referees</p>
                                 </div>
                                 <div class="form-row">
-                                    <ul class="list-group">
+                                    <ul class="list-group" style = "margin-left:30px;font-weight:bold;color:black">
                                         <li >i.  A current member of ACURET</li>
                                         <li >ii. Someone who knows about your work with animals</li>
                                         <li>iii. If you are a student, HOD/Faculty Advisor/Supervisor should be the second 
@@ -435,30 +399,34 @@
 
                                 <div>
                                 
-                                    <p>(b) *Please attach the following supporting documents (pdf)</p>
+                                    <p style = "font-size:18px;font-style:bold;margin-top:15px;">(b) *Please attach the following supporting documents (pdf)</p>
                                 </div>
                                 <div class="form-row">
                                     <ul class="list-group">
-                                        <li >i.  Current and updated Curriculum Vitae</li>
-                                        <li >ii. Animal welfare training certificates (if any)</li>
-                                        <li>iii. Two representative publications (if any and relevant)</li>
+                                        
+                                            <!-- <li ></li>
+                                            <li></li> -->
                                     </ul>
                                 </div>
 
                                 <br><div class="form-row">
-                                 <div class="col">
-                                       <label>Choose a file</label>
+                                    <div class="col">
+                                        
+                                       <!-- <label>Choose a file</label> -->
+                                       <p style = "font-weight:bold;color:black">Current and updated Curriculum Vitae <span style = "color:red">(required)</span></p>
                                        <div class="custom-file">
-                                       <input type="hidden" id="audio_hidden_tag" name="audio_hidden_tag" value="F">
-                                       <input type="file" class="custom-file-input" id="audiofile" name="files[]">
+                                       <input type="hidden" id="curriculum_hidden_tag" name="curriculum_hidden_tag" value="F">
+                                       <input type="file" class="custom-file-input" id="curriculum_vitae_file" name="files[]" onchange= "addCurriculumVitae()">
                                        <label class="custom-file-label">Choose file</label>
                                     </div>
                                  </div>
                                  <div class="col">
-                                       <label>Choose a file</label>
+                                        <!-- <p></p> -->
+                                       <!-- <label>Choose a file</label> -->
+                                       <p style = "font-weight:bold;color:black">Animal welfare training certificates<span style = "color:red"> (not required)</span></p>
                                        <div class="custom-file">
-                                       <input type="hidden" id="video_hidden_tag" name="video_hidden_tag">
-                                       <input type="file" class="custom-file-input" id="videofile" name="files[]">
+                                       <input type="hidden" id="animal_welfare_hidden_tag" name="animal_welfare_hidden_tag">
+                                       <input type="file" class="custom-file-input" id="animal_welfare_file" name="files[]" onchange = "addWelfareTraining()">
                                        <label class="custom-file-label">Choose file</label>
                                     </div>
                                  </div>   
@@ -466,35 +434,34 @@
 
                                 <br><div class="form-row">
                                  <div class="col">
-                                       <label>Choose a file</label>
+                                        <p style = "font-weight:bold;color:black">Representative publications 1 <span style = "color:red">(not required)</span></p>
+                                       <!-- <label>Choose a file</label> -->
                                        <div class="custom-file">
-                                       <input type="hidden" id="audio_hidden_tag" name="audio_hidden_tag" value="F">
-                                       <input type="file" class="custom-file-input" id="audiofile" name="files[]">
+                                       <input type="hidden" id="publication_hidden_tag1" name="publication_hidden_tag1" value="F">
+                                       <input type="file" class="custom-file-input" id="representative_file1" name="files[]" onchange = "representativePublications1()">
                                        <label class="custom-file-label">Choose file</label>
                                     </div>
                                  </div>
                                  <div class="col">
-                                       <label>Choose a file</label>
+                                        <p style = "font-weight:bold;color:black">Representative publications 2<span style = "color:red"> (not required)</span></p>
+                                       <!-- <label>Choose a file</label> -->
                                        <div class="custom-file">
-                                       <input type="hidden" id="video_hidden_tag" name="video_hidden_tag">
-                                       <input type="file" class="custom-file-input" id="videofile" name="files[]">
+                                       <input type="hidden" id="publication_hidden_tag2" name="publication_hidden_tag2">
+                                       <input type="file" class="custom-file-input" id="representative_file2" name="files[]" onchange = "representativePublications2()">
                                        <label class="custom-file-label">Choose file</label>
                                     </div>
                                  </div>   
                                 </div> 
 
                                 <div>
-                                 <h3 style = "text-align:center;margin-top:30px">DECLARATION AND SUBMISSION</h3>
-                                 <p>*Your Application Declaration</p>
+                                 <h3 style = "text-align:center;margin-top:20px;font-size:30px;font-style:italic;font-weight:bold;margin-top:50px">DECLARATION AND SUBMISSION</h3>
+                                 <p style = "font-weight:bold;color:black">*Your Application Declaration</p>
                                 </div>
-
                                 <br><div class="form-row">
                                     <div class="col-md-12">
                                        <div class="custom-file">
-                                        <!-- <label>Email Address.</label> -->
                                             <p style = "display:inline;font-size:20px;color:black">I</p>
                                             <input type="text"  id ="declaration" name = "declaration" required style = "border-style:none;border-bottom:solid 1px black;width:800px">
-                                            
                                         
                                         </div>
                                     </div>
@@ -516,7 +483,7 @@
 
                                 <br><br><div class="form-row">
                                  <div class="col"><br>
-                                    <button type="button" name="save" class="btn btn-success">SUBMIT</button>
+                                    <button type="button" name="save" class="btn btn-success submitform">SUBMIT</button>
                                  </div>                                    
                                 </div>
                            </form>
@@ -528,78 +495,494 @@
             </div>
          </div>
       </div>
-
+        
       <?php 
          require_once("js.php");
       ?>
-
+        
       <script>
+         
+        $(document).ready(function(){
+           changElement();
+           $("#animal_welfare_hidden_tag").val('F');
+           $("#publication_hidden_tag1").val('F');
+           $("#publication_hidden_tag2").val('F');
+           $("#curriculum_hidden_tag").val('F');
+           
 
-         $(document).ready(function(){
-         $("#audio_hidden_tag").val("F");
-         $("#video_hidden_tag").val("F");            
-         $("#section_audio_hidden_tag").val("F");            
-         $("#section_video_hidden_tag").val("F"); 
-         $("#snippet_audio_hidden_tag").val("F");
-         $("#snippet_video_hidden_tag").val("F");                        
-         $("#courseTitle").focus();
-         });
-
-         function createCourse(){
+        });
+         
+        $(".submitform").on('click', function(){
+            MaleStatus              = (document.getElementById("male").checked);
+            FemaleStatus            = (document.getElementById("female").checked);
+            GenderStatus            = '';
+            emailPattern            = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+            curriculumVitaeFile     = $('#curriculum_vitae_file');
+            curriculumVitaeFileAttr = curriculumVitaeFile[0].files[0];
+            animalWelfareCert       = $("#animal_welfare_file");
+            animalWelfareCertAttr   = animalWelfareCert[0].files[0];
+            representativePub1      = $("#representative_file1");
+            representativePub1Attr  = representativePub1[0].files[0];
+            representativePub2      = $("#representative_file2");
+            representativePub2Attr  = representativePub2[0].files[0];
             
-            courseTitle   = $("#courseTitle").val();
-            courseDesc    = $("#courseDesc").val();
-
-            if(courseTitle == ""|| courseDesc == ""){
-                  alert("Please Fill up the form");
-            }else{
-               // if(password == cpassword){
-                  feedback = confirm("You are dropping or updating your course");
-                  var data = $("form#processCreateCourse")[0]; 	
-                  var formData = new FormData(data); //creating an instance of the class FormData using the keyword NEW
-                  if(feedback == true){
-                     $.ajax({                                
-                     url: "processCreateCourse.php",
-                     type: 'POST',
-                     data: formData,
-                     async: false,
-                     cache: false,
-                     contentType: false,
-                     processData: false,
-                     success: function (e) 
-                     {  
-                        if(e == 1){
-                           alert("Course created Successfully");
-                           clearCourse();
-                        }else if (e == 2){
-                           alert("course updated Successfully");
-                           clearCourse();
-                        }else if (e == -1){
-                           alert("Error uploading/updating");
-                        }else if (e == -2){
-                           alert("Course added/updated successfully, but unable to upload media(s)");
-                           clearCourse();
-                        }else{
-                           alert("Something went wrong, please contact the system admininstrator");
-                        }
-                     }
-                  });	
-               }
+          
+            if($("#memebership_type").val() == ''){
+                alert('Membership type is required');
+                $("#memebership_type").focus();
+                return false;
+            } 
+            if($("#given_name").val() == ''){
+                alert('Given name is required');
+                $("#given_name").focus();
+                return false;
+            }    
+            if($("#sur_name").val() == ''){
+                alert('Surname is required');
+                $("#sur_name").focus();
+                return false;
+            }     
+            if($("#initials").val() == ''){
+                alert('Initials is required');
+                $("#initials").focus();
+                return false;
+            }        
+            if($("#maiden_name").val() == ''){
+                alert('Maidenname is required');
+                $("#maiden_name").focus();
+                return false
+            }     
+            if(MaleStatus == true){
+                GenderStatus = 'male';
+            }        
+            if(FemaleStatus == true){
+                GenderStatus = 'female';
+            }  
+            if(GenderStatus == ''){
+                alert('Please choose male or female');
+                $("#male").focus();
+                return false;
             }
-         }
-      
+            if($("#nationality").val() == ''){
+                alert('Nationality is required');
+                $("#nationality").focus();
+                return false;
+            }
+            if($("#country_of_residence").val() == ''){
+                alert('Country of residence is required');
+                $("#country_of_residence").focus();
+                return false;
+            }       
+            if($("#title").val() == ''){
+                alert('Title is required');
+                $("#title").focus();
+                return false;
+            }
+            if($("#institution").val() == ''){
+                alert('Institution is required');
+                $("#institution").focus();
+                return false;
+            }
+            if($("#position").val() == ''){
+                alert('Position is required');
+                $("#position").focus();
+                return false;
+            }
+            if($("#address1").val() == ''){
+                alert('Address is required');
+                $("#address1").focus();
+                return false;
+            }
+            if($("#address2").val() == ''){
+                alert('Address is required');
+                $("#address2").focus();
+                return false;
+            }
+            if($("#city").val() == ''){
+                alert('City is required');
+                $("#city").focus();
+                return false;
+            }
+            if($("#town").val() == ''){
+                alert('Town is required');
+                $("#town").focus();
+                return false;
+            }
+            if($("#zip_code").val() == ''){
+                alert('Zip code is required');
+                $("#zip_code").focus();
+                return false;
+            }
+            if($("#country").val() == ''){
+                alert('Country is required');
+                $("#country").focus();
+                return false;
+            }
+            if($("#mobile").val() == ''){
+                alert('Mobile is required');
+                $("#mobile").focus();
+                return false;
+            }
+            if($("#home").val() == ''){
+                alert('Home is required');
+                $("#home").focus();
+                return false;
+            }
+            if($("#work").val() == ''){
+                alert('Work is required');
+                $("#work").focus();
+                return false;
+            }
+            if($("#country").val() == ''){
+                alert('Country is required');
+                $("#country").focus();
+                return false;
+            }
+            if($("#personal_email").val() == '' || !emailPattern.test($("#personal_email").val())){
+                alert('Valid personal email is required');
+                $("#personal_email").focus();
+                return false;
+            }
+            if($("#work_email").val() == '' || !emailPattern.test($("#work_email").val())){
+                alert('Valid work email is required');
+                $("#work_email").focus();
+                return false;
+            }
+            var allDegreeObtained = true;
+            $('input[name="institutionDegree"], input[name="place"], input[name="student_country"], input[name="yearOfGraduation"]').each(function(){
+                if(!$(this).val()) {
+                    alert('Please fill degree obtained informations!');
+                    $(this).focus();
+                    allDegreeObtained = false; 
+                    return false; 
+                }
+            });
+            if(!allDegreeObtained) {
+                return false; 
+            }
+            if($("#other_qualifications").val() == ''){
+                alert('Please choose other qualification or fellowship');
+                $("#other_qualifications").focus();
+                return false;
+            }
+            if($("#current_undertaking_status").val() == ''){
+                alert('Are you currently undertaking study/training?');
+                $("#current_undertaking_status").focus();
+                return false;  
+            }   
+            if($("#current_undertaking_status").val() == 'yes'){
+                if($("#animal_type").val() == ''){
+                    alert('Indicate type of animal');
+                    $("#animal_type").focus();
+                    return false;
+                }
+            }   
+            if($("#current_undertaking_status").val() == 'no'){
+                if($("#statement_of_interest").val() == ''){
+                    alert('please provide a statement of your interest in laboratory animals.');
+                    $("#statement_of_interest").focus();
+                    return false;
+                }
+            }   
+            if($("#care_laboratory_animals").val() == ''){
+                alert('Have you used/cared for laboratory animals as part of your daily work?');
+                $("#care_laboratory_animals").focus();
+                return false;    
+            }   
+            if($("#care_laboratory_animals").val() == 'yes'){
+                if($("#animal_care_details").val() == ''){
+                    alert('please state Institution, Place and dates for animal care');
+                    $("#animal_care_details").focus();
+                    return false;
+                }   
+            }   
+            if($("#attended_laboratory_animal").val() == ''){
+                alert('Have attended any laboratory animal welfare training?');
+                $("#attended_laboratory_animal").focus();
+                return false;
+                
+            }   
+            if($("#attended_laboratory_animal").val() == 'yes'){
+                if($("#animal_welfare_training_details").val() == ''){
+                    alert('please state below event,date and place');
+                    $("#animal_welfare_training_details").focus();
+                    return false;
+                }
+                
+            }   
+            if($("#institution_animal_facitlity").val() == ''){
+                alert('Does your Institution have an animal facility?');
+                $("#institution_animal_facitlity").focus();
+                return false;
+                
+            } 
+            if($("#fullNames1").val() == ''){
+                alert('Referee fullname is required');
+                $("#fullNames1").focus();
+                return false;
+            }
+            if($("#emailAddress1").val() == '' ||  !emailPattern.test($("#emailAddress1").val())){
+                alert('Referee email must be valid');
+                $("#emailAddress1").focus();
+                return false;
+            }
+            if($("#telephone1").val() == ''){
+                alert('Referee telephone is required');
+                $("#telephone1").focus();
+                return false;
+            }
+            if($("#fullNames2").val() == ''){
+                alert('Referee fullname is required');
+                $("#fullNames2").focus();
+                return false;
+            }
+            if($("#emailAddress2").val() == '' || !emailPattern.test($("#emailAddress2").val())){
+                alert('Referee email must be valid');
+                $("#emailAddress2").focus();
+                return false;
+            }
+            if($("#telephone2").val() == ''){
+                alert('Referee telephone is required');
+                $("#telephone2").focus();
+                return false;
+            }
+            if($("#curriculum_vitae_file")[0].files.length == 0){
+               alert('Curriculum vitae file is required');
+               $("#curriculum_vitae_file").focus();
+               return false;
+            }
+            if(curriculumVitaeFileAttr.type !== 'application/pdf'){
+                alert('Only PDF files are allowed for curriculum vitae.');
+                $("#curriculum_vitae_file").focus();
+                return false;
+            }
+            if($("#animal_welfare_file")[0].files.length == 1){
+                if(animalWelfareCertAttr.type !== 'application/pdf'){
+                    alert('Only PDF files are allowed for animal welfare.');
+                    $("#animal_welfare_file").focus();
+                    return false;
+                }
+            }
+            if($("#representative_file1")[0].files.length == 1){
+                if(representativePub1Attr.type !== 'application/pdf'){
+                    alert('Only PDF files are allowed for representative publication 1.');
+                    $("#representative_file1").focus();
+                    return false;
+                }
+            }
+            
+            if($("#representative_file2")[0].files.length == 1){
+                if(representativePub2Attr.type !== 'application/pdf'){
+                    alert('Only PDF files are allowed for representative publication 2.');
+                    $("#representative_file2").focus();
+                    return false;
+                }
+            }
+            if($("#declaration").val() == ''){
+                alert('Your Application Declaration.');
+                $("#declaration").focus();
+                return false;
+            }
+            feedback = confirm("You can send us your information now");
+            if(feedback == true){
+                var data = $("form#ProcessUserInput")[0]; 	
+                var formData = new FormData(data); 
+                $.ajax({                                
+                    url: "processMemberInput.php",
+                    type: 'POST',
+                    data: formData,
+                    async: false,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function(e){
+                       
+                        if(e == 1){
+                            alert("Record sent succesfully");
+                            clearFields();
+                        }else if(e == -1){
+                            alert("Unable to send records");
+                        }else if(e == -2){
+                            alert("Record exist with this email already");
+                        }else{
+                            "Error occured sending file";
+                        }
+                    }
+                });	 
+            }
+        });
 
-         function clearCourse(){
+        function changElement(){
+            $("#current_undertaking_status").on("change", function () {
+                var current_undertaken = $(this).val(); 
+                if(current_undertaken === "yes") {
+                    $("#uncurrently_undertaking").remove();
+                    var newField = `
+                        <div class="col-md-12 md-3" style = "margin-top:25px" id = "currently_undertaking">
+                            <label>If YES, please indicate type(s) of animals</label>
+                            <select class="form-control form-control-sm mb-3" style = "height:40px" id = "animal_type" name = "animal_type">
+                                <option selected=""></option>
+                                <option value="Laboratory animals">Laboratory animals</option>
+                                <option value="Farm animals"> Farm animals</option>
+                                <option value="Companion animals">Companion animals</option>
+                                <option value="Sports animals"> Sports animals</option>
+                            </select>
+                        </div>`;  
+                        $("#undertaken_form").append(newField);
+                }else if(current_undertaken === "no"){
+                    $("#currently_undertaking").remove();
+                    var newField = `
+                        <div class="col-md-12 mb-3" id = "uncurrently_undertaking" style = "margin-top:25px">
+                                    <label>If NO, please provide a statement of your interest in laboratory animals.</label>
+                                    <input type="text" class="form-control" id ="statement_of_interest" name = "statement_of_interest"  required>
+                                </div> `;  
+                        $("#undertaken_form").append(newField);
+                }else{
+                    $("#uncurrently_undertaking").remove();
+                    $("#currently_undertaking").remove();
+                }
+            });
+
+            $("#care_laboratory_animals").on("change", function () {
+                var care_laboratory_animals_status = $(this).val();
+                if(care_laboratory_animals_status == 'yes'){
+                    var newField = `
+                    <div class="col-md-12 md-3" id = "used_care_laboratory">
+                        <label>If yes, please state Institution, Place and dates</label>
+                        <select class="form-control form-control-sm mb-3" style = "height:40px" id = "animal_care_details" name = "animal_care_details">
+                            <option selected=""></option>
+                            <option value="Institution">Institution</option>
+                            <option value="Place"> Place</option>
+                            <option value="Duration">Duration</option>
+                        </select>
+                    </div>`;
+                    $("#care_laboratory_animals_form").append(newField);
+                }else{
+                    $("#used_care_laboratory").remove();
+                }
+               
+            });
+
+            $("#attended_laboratory_animal").on("change", function(){
+                var attended_laboratory_animal = $(this).val();
+                if(attended_laboratory_animal == 'yes'){
+                    var newField =
+                    `<div class="col-md-12 md-3" id = "used_care_laboratory">
+                        <label>If YES, please state below and upload your Certificate as supporting document.</label>
+                        <select class="form-control form-control-sm mb-3" style = "height:40px" id = "animal_welfare_training_details" name = "animal_welfare_training_details">
+                            <option selected=""></option>
+                            <option value="Event">Event</option>
+                            <option value="Date"> Date</option>
+                            <option value="Place">Place</option> 
+                        </select>
+                    </div>`
+                    $("#used_care_laboratory_form").append(newField);
+                }else{
+                    $("#used_care_laboratory").remove();
+                }
+                
+            });                                         
+        }
+        function addCurriculumVitae(){
+            $("#curriculum_hidden_tag").val('T');
+        }
+        function addWelfareTraining(){
+            $("#animal_welfare_hidden_tag").val('T');
+        }
+        function representativePublications1(){
+            $("#publication_hidden_tag1").val('T');
+        }
+        function representativePublications2(){
+            $("#publication_hidden_tag2").val('T');
+
+        }
+        var counter = 1; 
+        function addEducation() {
+            var allFilled = true;
+            $('input[name="institutionDegree[]"], input[name="place[]"], input[name="student_country[]"], input[name="yearOfGraduation[]"]').each(function(){
+                if(!$(this).val()){ 
+                    alert('Please fill in all required fields!');
+                    $(this).focus();
+                    allFilled = false;
+                    return false; 
+                }
+            });
+            if(allFilled) {
+                counter++; // Increment the counter for new inputs
+                const newFields = `<div id = "educationField${counter}">
+                    <hr style="border: 1px solid black;"><br><br><div class="form-row">
+                        <div class="col-md-6 md-3">
+                       
+                            <label>Institution.</label>
+                            <input type="text" class="form-control" id="institutionDegree${counter}" name="institutionDegree[]" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Place.</label>
+                            <input type="text" class="form-control" id="place${counter}" name="place[]" required>
+                        </div> 
+                    </div>
+                    <br><br><div class="form-row">
+                        <div class="col-md-6 md-3">
+                            <label>Country.</label>
+                            <input type="text" class="form-control" id="student_country${counter}" name="student_country[]" required>
+                        </div>
+                        <div class="col-md-6 md-3">
+                            <label for="exampleInputdate">Year of Graduation</label>
+                            <input type="date" class="form-control" id="yearOfGraduation${counter}" name="yearOfGraduation[]"/>
+                        </div>
+                        
+                    </div>
+                     <button type="button" name="save" class="btn btn-danger" style = "margin-top:17px" onclick = "deleteEducation(${counter})">Remove</button>
+                     </div>`;
+                $("#add").append(newFields);
+            }
+        }
+        
+        function deleteEducation(counter){
+            $(`#educationField${counter}`).remove();
+        }
+        function clearFields(){
             $("#courseTitle").val("");
-            $("#courseDesc").val("");
-            $("#audio_hidden_tag").val("F");
-            $("#video_hidden_tag").val("F"); 
-            $("#audiofile").val(""); 
-            $("#videofile").val(""); 
-         }
+            // $("#courseDesc").val("");
+            // $("#audio_hidden_tag").val("F");
+            // $("#video_hidden_tag").val("F"); 
+            // $("#audiofile").val(""); 
+            // $("#videofile").val(""); 
+        }
           
           
        
+        function preveiwImage(getImage){
+            var fileType = document.getElementById('userfile').files[0].type;
+            var fileSize = document.getElementById('userfile').files[0].size;
+
+            /CONVERT IMAGE FILE TO KILOBYTE/
+            var fileSize = Math.floor(fileSize/(1024));
+            if(getImage.files && getImage.files[0]){
+                //ensure that only one image is uploaded at a time
+                if(fileType == 'image/jpg' || fileType == 'image/jpeg' || fileType == 'image/png'){
+                    //ensure that file is jpg/jpeg
+                    /*IMAGE SIZE MUST NOT BE MORE THAN 1 MB*/
+                    if(fileSize<=5000){
+                        var imgReader = new FileReader();// keyword NEW is used to create an instance of a class FileReader
+                        imgReader.onload = function(e){
+                            //returning a value [e]
+                            $('#userimage').attr('src', e.target.result);// append the uploaded image to the img tag
+                            $("#picture_hidden_tag").val("T");
+                        }
+                        imgReader.readAsDataURL(getImage.files[0]);       
+                    }else{
+                        alert("Image Size too large for Upload!");
+                        $("#userfile").val('');
+                    }
+                }else{
+                    alert("File format not Supported/Allowed for Upload!, Please Choose another.");
+                    $("#userfile").val('');
+                }
+            }
+        }	
+
+
       </script>
 
    </body>
