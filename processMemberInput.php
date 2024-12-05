@@ -42,6 +42,12 @@
         }
     }
    
+    
+    if(isset($statement_of_interest)){
+        $statementOfInterest   = ucwords(trim($statement_of_interest));
+    }else{
+        $statementOfInterest   = '';
+    }
     $memebershipType                = ucwords(trim($memebership_type));
     $givenName                      = ucwords(trim($given_name));
     $surnName                       = ucwords(trim($sur_name));
@@ -73,7 +79,6 @@
     $currentUndertakingStatus       = ucwords(trim($current_undertaking_status));
     $animalCareStatus               = ucwords(trim($animal_care));
     $animalType                     = ucwords(trim($animal_type));
-    $statementOfInterest            = ucwords(trim($statement_of_interest));
     $careLaboratoryAnimals          = ucwords(trim($care_laboratory_animals));
     $attendedLaboratoryAnimal       = ucwords(trim($attended_laboratory_animal));
     $AnimalWelfareTrainingDetails   = ucwords(trim($animal_welfare_training_details));
@@ -99,86 +104,91 @@
             )VALUES(NULL,'$memebershipType','$givenName','$surnName','$initials','$maidenName', '$gender','$dateOfBirth','$nationality','$countryOfResidence','$title', '$institution','$position','$address1','$address2','$city','$town','$zip_code', '$country','$mobile','$home','$work','$personalEmail','$workEmail','$other_qualifications', '$institutionDegreeOutput', '$placeOutput','$countryOutput', '$yearOfGraduationOutput','$currentUndertakingStatus', '$animalType', '$statementOfInterest', '$careLaboratoryAnimals', '$attendedLaboratoryAnimal', '$AnimalWelfareTrainingDetails','$animalCareDetails', '$institutionAnimalFacility', '$fullName1','$emailAddress1','$telephone1','$fullNames2','$emailAddress2', '$telephone2','$picture_hidden_tag','$curriculum_hidden_tag','$animal_welfare_hidden_tag','$publication_hidden_tag1','$publication_hidden_tag2')";
             $result = mysqli_query($conn, $sql);
             
-            $i = 0;
-            while($i < count($_FILES["files"]["name"])){
-                if($_FILES['files']['name'][$i] == ""){
-  
-                }else{
-                    $CountArray = count(explode(".",$_FILES["files"]["name"][$i]));
-                    $filename = $_FILES['files']['name'][$i]; 
-                    //gets the file name
-                    $fileType = pathinfo($filename,PATHINFO_EXTENSION);
-                    if ($CountArray>=2){
-                        if($i == 0 && ($fileType == 'jpeg' || $fileType == 'jpg' || $fileType == 'png')){
-                            $sql = "SELECT * FROM member_info WHERE personal_email = '$personalEmail'";
-                            $result = mysqli_query($conn, $sql) or die(mysql_error());
-                            $row = mysqli_fetch_assoc($result);  
-                            $email = $row['personal_email'];
-                            $filename = $email . '.'.$fileType ;
-                            $upload_dir = 'memberProfile';
-                        }else if($fileType == 'pdf'){
-                            switch ($i) {
-                                //if $i is == to each of them
-                                case 1:
-                                    $sql = "SELECT * FROM member_info WHERE personal_email = '$personalEmail'";
-                                    $result = mysqli_query($conn, $sql) or die(mysql_error());
-                                    $row = mysqli_fetch_assoc($result);  
-                                    $email = $row['personal_email'];
-                                    $filename = $email . '.pdf';
-                                    $upload_dir = 'CurriculumVitae'; 
-                                    break;
-                                case 2:
-                                    $sql = "SELECT * FROM member_info WHERE personal_email = '$personalEmail'";
-                                    $result = mysqli_query($conn, $sql) or die(mysql_error());
-                                    $row = mysqli_fetch_assoc($result);  
-                                    $email = $row['personal_email'];
-                                    $filename = $email . '.pdf';
-                                    $upload_dir = 'AnimalWelfareTraining'; 
-                                    break;
-                                case 3:
-                                    $sql = "SELECT * FROM member_info WHERE personal_email = '$personalEmail'";
-                                    $result = mysqli_query($conn, $sql) or die(mysql_error());
-                                    $row = mysqli_fetch_assoc($result);  
-                                    $email = $row['personal_email'];
-                                    $filename = $email . '.pdf';
-                                    $upload_dir = 'RepresentativePublications1'; 
-                                    break;
-                                case 4:
-                                    $sql = "SELECT * FROM member_info WHERE personal_email = '$personalEmail'";
-                                    $result = mysqli_query($conn, $sql) or die(mysql_error());
-                                    $row = mysqli_fetch_assoc($result);  
-                                    $email = $row['personal_email'];
-                                    $filename = $email . '.pdf';
-                                    $upload_dir = 'RepresentativePublications2'; 
-                                    break;
-                                default:
-                                    break;
+            if($result == true){
+                $i = 0;
+                while($i < count($_FILES["files"]["name"])){
+                    if($_FILES['files']['name'][$i] == ""){
+      
+                    }else{
+                        $CountArray = count(explode(".",$_FILES["files"]["name"][$i]));
+                        $filename = $_FILES['files']['name'][$i]; 
+                        //gets the file name
+                        $fileType = pathinfo($filename,PATHINFO_EXTENSION);
+                        if ($CountArray>=2){
+                            if($i == 0 && ($fileType == 'jpeg' || $fileType == 'jpg' || $fileType == 'png')){
+                                $sql = "SELECT * FROM member_info WHERE personal_email = '$personalEmail'";
+                                $result = mysqli_query($conn, $sql) or die(mysql_error());
+                                $row = mysqli_fetch_assoc($result);  
+                                $email = $row['personal_email'];
+                                $filename = $email . '.'.$fileType ;
+                                $upload_dir = 'memberProfile';
+                            }else if($fileType == 'pdf'){
+                                switch ($i) {
+                                    //if $i is == to each of them
+                                    case 1:
+                                        $sql = "SELECT * FROM member_info WHERE personal_email = '$personalEmail'";
+                                        $result = mysqli_query($conn, $sql) or die(mysql_error());
+                                        $row = mysqli_fetch_assoc($result);  
+                                        $email = $row['personal_email'];
+                                        $filename = $email . '.pdf';
+                                        $upload_dir = 'CurriculumVitae'; 
+                                        break;
+                                    case 2:
+                                        $sql = "SELECT * FROM member_info WHERE personal_email = '$personalEmail'";
+                                        $result = mysqli_query($conn, $sql) or die(mysql_error());
+                                        $row = mysqli_fetch_assoc($result);  
+                                        $email = $row['personal_email'];
+                                        $filename = $email . '.pdf';
+                                        $upload_dir = 'AnimalWelfareTraining'; 
+                                        break;
+                                    case 3:
+                                        $sql = "SELECT * FROM member_info WHERE personal_email = '$personalEmail'";
+                                        $result = mysqli_query($conn, $sql) or die(mysql_error());
+                                        $row = mysqli_fetch_assoc($result);  
+                                        $email = $row['personal_email'];
+                                        $filename = $email . '.pdf';
+                                        $upload_dir = 'RepresentativePublications1'; 
+                                        break;
+                                    case 4:
+                                        $sql = "SELECT * FROM member_info WHERE personal_email = '$personalEmail'";
+                                        $result = mysqli_query($conn, $sql) or die(mysql_error());
+                                        $row = mysqli_fetch_assoc($result);  
+                                        $email = $row['personal_email'];
+                                        $filename = $email . '.pdf';
+                                        $upload_dir = 'RepresentativePublications2'; 
+                                        break;
+                                    default:
+                                        break;
+                                }
                             }
-                        }
-                        if(is_dir($upload_dir)){
-                            //Directory already exist
-                        }else{//create the directory
-                            mkdir($upload_dir);
-                        }
-                        $targetFile  = $upload_dir.'/'.$filename;
-                        if(file_exists($targetFile))
-                           {
-                            unlink($targetFile);//unlink php function deletes the file
-                        }
-                        if(move_uploaded_file($_FILES['files']['tmp_name'][$i], $targetFile)){//uploads the file in the directory
+                            if(is_dir($upload_dir)){
+                                //Directory already exist
+                            }else{//create the directory
+                                mkdir($upload_dir);
+                            }
+                            $targetFile  = $upload_dir.'/'.$filename;
+                            if(file_exists($targetFile))
+                               {
+                                unlink($targetFile);//unlink php function deletes the file
+                            }
+                            if(move_uploaded_file($_FILES['files']['tmp_name'][$i], $targetFile)){//uploads the file in the directory
+                               
+                                // return true;
+                            }else{
+                                echo -1;//-2 is unable to upload file
+                            }
+    
                            
-                            // return true;
-                        }else{
-                            echo -1;//-2 is unable to upload file
-                        }
-
-                       
-                    }	
-                
+                        }	
+                    
+                    }
+                    $i++;
                 }
-                $i++;
+                echo 1;
+            }else{
+                echo 'it is not true';
+                // exit;
             }
-            echo 1;
         }else{
             $sql = "INSERT INTO member_info(members_id,membership_type, given_name, surname, initials, maiden_name, gender, date_of_birth,nationality, country_of_residence, title, institution, position, address1, address2,city,town,zip_code,country, mobile,home,work,personal_email,work_email,other_qualifications,institution_degree_output,place_output, country_output, year_of_graduation_output, current_undertaking_status, animal_type, statement_of_interest, care_laboratory_animals, attended_laboratory_animal, animal_welfare_training_details, animal_care_details, institution_animal_facility, full_name1, email_address1, telephone1,full_name2,email_address2,telephone2,profile_image_status,curriculum_image_status,animal_welfare_image_status,representative_publication1_image_status,representative_publication2_image_status
             )VALUES(NULL,'$memebershipType','$givenName','$surnName','$initials','$maidenName', '$gender','$dateOfBirth','$nationality','$countryOfResidence','$title', '$institution','$position','$address1','$address2','$city','$town','$zip_code', '$country','$mobile','$home','$work','$personalEmail','$workEmail','$other_qualifications', '$institutionDegreeOutput', '$placeOutput','$countryOutput', '$yearOfGraduationOutput','$currentUndertakingStatus', '$animalType', '$statementOfInterest', '$careLaboratoryAnimals', '$attendedLaboratoryAnimal', '$AnimalWelfareTrainingDetails','$animalCareDetails', '$institutionAnimalFacility', '$fullName1','$emailAddress1','$telephone1','$fullNames2','$emailAddress2', '$telephone2','$picture_hidden_tag','$curriculum_hidden_tag','$animal_welfare_hidden_tag','$publication_hidden_tag1','$publication_hidden_tag2')";
