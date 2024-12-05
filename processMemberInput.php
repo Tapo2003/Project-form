@@ -72,13 +72,8 @@
     $yearOfGraduationOutput         = ucwords(trim($yearOfGraduationOutput));
     $currentUndertakingStatus       = ucwords(trim($current_undertaking_status));
     $animalCareStatus               = ucwords(trim($animal_care));
-
-    ///add animal care status to the table of the database. i think that is the only one(i will check when my system is having light)
     $animalType                     = ucwords(trim($animal_type));
     $statementOfInterest            = ucwords(trim($statement_of_interest));
-   
-    
-   
     $careLaboratoryAnimals          = ucwords(trim($care_laboratory_animals));
     $attendedLaboratoryAnimal       = ucwords(trim($attended_laboratory_animal));
     $AnimalWelfareTrainingDetails   = ucwords(trim($animal_welfare_training_details));

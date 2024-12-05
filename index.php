@@ -571,292 +571,292 @@
             representativePub2Attr  = representativePub2[0].files[0];
             
 
-            // if($("#memebership_type").val() == ''){
-            //     alert('Membership type is required');
-            //     $("#memebership_type").focus();
-            //     return false;
-            // } 
-            // if($("#given_name").val() == ''){
-            //     alert('Given name is required');
-            //     $("#given_name").focus();
-            //     return false;
-            // }    
-            // if($("#sur_name").val() == ''){
-            //     alert('Surname is required');
-            //     $("#sur_name").focus();
-            //     return false;
-            // }     
-            // if($("#initials").val() == ''){
-            //     alert('Initials is required');
-            //     $("#initials").focus();
-            //     return false;
-            // }        
-            // if($("#maiden_name").val() == ''){
-            //     alert('Maidenname is required');
-            //     $("#maiden_name").focus();
-            //     return false
-            // }     
-            // if(MaleStatus == true){
-            //     GenderStatus = 'male';
-            // }        
-            // if(FemaleStatus == true){
-            //     GenderStatus = 'female';
-            // }  
-            // if(GenderStatus == ''){
-            //     alert('Please choose male or female');
-            //     $("#male").focus();
-            //     return false;
-            // }
-            // if($("#nationality").val() == ''){
-            //     alert('Nationality is required');
-            //     $("#nationality").focus();
-            //     return false;
-            // }
-            // if($("#country_of_residence").val() == ''){
-            //     alert('Country of residence is required');
-            //     $("#country_of_residence").focus();
-            //     return false;
-            // }       
-            // if($("#title").val() == ''){
-            //     alert('Title is required');
-            //     $("#title").focus();
-            //     return false;
-            // }
-            // if($("#institution").val() == ''){
-            //     alert('Institution is required');
-            //     $("#institution").focus();
-            //     return false;
-            // }
-            // if($("#position").val() == ''){
-            //     alert('Position is required');
-            //     $("#position").focus();
-            //     return false;
-            // }
-            // if($("#address1").val() == ''){
-            //     alert('Address is required');
-            //     $("#address1").focus();
-            //     return false;
-            // }
-            // if($("#address2").val() == ''){
-            //     alert('Address is required');
-            //     $("#address2").focus();
-            //     return false;
-            // }
-            // if($("#city").val() == ''){
-            //     alert('City is required');
-            //     $("#city").focus();
-            //     return false;
-            // }
-            // if($("#town").val() == ''){
-            //     alert('Town is required');
-            //     $("#town").focus();
-            //     return false;
-            // }
-            // if($("#zip_code").val() == ''){
-            //     alert('Zip code is required');
-            //     $("#zip_code").focus();
-            //     return false;
-            // }
-            // if($("#country").val() == ''){
-            //     alert('Country is required');
-            //     $("#country").focus();
-            //     return false;
-            // }
-            // if($("#mobile").val() == ''){
-            //     alert('Mobile is required');
-            //     $("#mobile").focus();
-            //     return false;
-            // }
-            // if($("#home").val() == ''){
-            //     alert('Home is required');
-            //     $("#home").focus();
-            //     return false;
-            // }
-            // if($("#work").val() == ''){
-            //     alert('Work is required');
-            //     $("#work").focus();
-            //     return false;
-            // }
-            // if($("#country").val() == ''){
-            //     alert('Country is required');
-            //     $("#country").focus();
-            //     return false;
-            // }
-            // if($("#personal_email").val() == '' || !emailPattern.test($("#personal_email").val())){
-            //     alert('Valid personal email is required');
-            //     $("#personal_email").focus();
-            //     return false;
-            // }
-            // if($("#work_email").val() == '' || !emailPattern.test($("#work_email").val())){
-            //     alert('Valid work email is required');
-            //     $("#work_email").focus();
-            //     return false;
-            // }
-            // var allDegreeObtained = true;
-            // $('input[name="institutionDegree[]"], input[name="place[]"], input[name="student_country[]"], input[name="yearOfGraduation[]"]').each(function(){
-            //     if(!$(this).val()) {
-            //         alert('Please fill degree obtained informations!');
-            //         $(this).focus();
-            //         allDegreeObtained = false; 
-            //         return false; 
-            //     }
-            // });
-            // if(!allDegreeObtained) {
-            //     return false; 
-            // }
-            // if($("#other_qualifications").val() == ''){
-            //     alert('Please choose other qualification or fellowship');
-            //     $("#other_qualifications").focus();
-            //     return false;
-            // }
+            if($("#memebership_type").val() == ''){
+                alert('Membership type is required');
+                $("#memebership_type").focus();
+                return false;
+            } 
+            if($("#given_name").val() == ''){
+                alert('Given name is required');
+                $("#given_name").focus();
+                return false;
+            }    
+            if($("#sur_name").val() == ''){
+                alert('Surname is required');
+                $("#sur_name").focus();
+                return false;
+            }     
+            if($("#initials").val() == ''){
+                alert('Initials is required');
+                $("#initials").focus();
+                return false;
+            }        
+            if($("#maiden_name").val() == ''){
+                alert('Maidenname is required');
+                $("#maiden_name").focus();
+                return false
+            }     
+            if(MaleStatus == true){
+                GenderStatus = 'male';
+            }        
+            if(FemaleStatus == true){
+                GenderStatus = 'female';
+            }  
+            if(GenderStatus == ''){
+                alert('Please choose male or female');
+                $("#male").focus();
+                return false;
+            }
+            if($("#nationality").val() == ''){
+                alert('Nationality is required');
+                $("#nationality").focus();
+                return false;
+            }
+            if($("#country_of_residence").val() == ''){
+                alert('Country of residence is required');
+                $("#country_of_residence").focus();
+                return false;
+            }       
+            if($("#title").val() == ''){
+                alert('Title is required');
+                $("#title").focus();
+                return false;
+            }
+            if($("#institution").val() == ''){
+                alert('Institution is required');
+                $("#institution").focus();
+                return false;
+            }
+            if($("#position").val() == ''){
+                alert('Position is required');
+                $("#position").focus();
+                return false;
+            }
+            if($("#address1").val() == ''){
+                alert('Address is required');
+                $("#address1").focus();
+                return false;
+            }
+            if($("#address2").val() == ''){
+                alert('Address is required');
+                $("#address2").focus();
+                return false;
+            }
+            if($("#city").val() == ''){
+                alert('City is required');
+                $("#city").focus();
+                return false;
+            }
+            if($("#town").val() == ''){
+                alert('Town is required');
+                $("#town").focus();
+                return false;
+            }
+            if($("#zip_code").val() == ''){
+                alert('Zip code is required');
+                $("#zip_code").focus();
+                return false;
+            }
+            if($("#country").val() == ''){
+                alert('Country is required');
+                $("#country").focus();
+                return false;
+            }
+            if($("#mobile").val() == ''){
+                alert('Mobile is required');
+                $("#mobile").focus();
+                return false;
+            }
+            if($("#home").val() == ''){
+                alert('Home is required');
+                $("#home").focus();
+                return false;
+            }
+            if($("#work").val() == ''){
+                alert('Work is required');
+                $("#work").focus();
+                return false;
+            }
+            if($("#country").val() == ''){
+                alert('Country is required');
+                $("#country").focus();
+                return false;
+            }
+            if($("#personal_email").val() == '' || !emailPattern.test($("#personal_email").val())){
+                alert('Valid personal email is required');
+                $("#personal_email").focus();
+                return false;
+            }
+            if($("#work_email").val() == '' || !emailPattern.test($("#work_email").val())){
+                alert('Valid work email is required');
+                $("#work_email").focus();
+                return false;
+            }
+            var allDegreeObtained = true;
+            $('input[name="institutionDegree[]"], input[name="place[]"], input[name="student_country[]"], input[name="yearOfGraduation[]"]').each(function(){
+                if(!$(this).val()) {
+                    alert('Please fill degree obtained informations!');
+                    $(this).focus();
+                    allDegreeObtained = false; 
+                    return false; 
+                }
+            });
+            if(!allDegreeObtained) {
+                return false; 
+            }
+            if($("#other_qualifications").val() == ''){
+                alert('Please choose other qualification or fellowship');
+                $("#other_qualifications").focus();
+                return false;
+            }
             
             
-            // if($("#current_undertaking_status").val() == ''){
-            //     alert('Are you currently undertaking study/training?');
-            //     $("#current_undertaking_status").focus();
-            //     return false;  
-            // }  
-            // if($("#current_undertaking_status").val() == 'yes'){
-            //     if((document.getElementById("fulltime").checked) == true){
+            if($("#current_undertaking_status").val() == ''){
+                alert('Are you currently undertaking study/training?');
+                $("#current_undertaking_status").focus();
+                return false;  
+            }  
+            if($("#current_undertaking_status").val() == 'yes'){
+                if((document.getElementById("fulltime").checked) == true){
                    
-            //         $programmeNameStatus = 'fulltime';
+                    $programmeNameStatus = 'fulltime';
                    
-            //         }if((document.getElementById("parttime").checked) == true){
-            //             $programmeNameStatus = 'parttime';
-            //         }if((document.getElementById("distance").checked) == true){
-            //             $programmeNameStatus = 'distance';
-            //         }if((document.getElementById("others").checked) == true){
-            //             $programmeNameStatus = 'others';
-            //         }
-            //     if($programmeNameStatus == ''){
-            //         alert('choose a programme name');
-            //         $("#fulltime").focus(); 
-            //         return false;
+                    }if((document.getElementById("parttime").checked) == true){
+                        $programmeNameStatus = 'parttime';
+                    }if((document.getElementById("distance").checked) == true){
+                        $programmeNameStatus = 'distance';
+                    }if((document.getElementById("others").checked) == true){
+                        $programmeNameStatus = 'others';
+                    }
+                if($programmeNameStatus == ''){
+                    alert('choose a programme name');
+                    $("#fulltime").focus(); 
+                    return false;
                 
-            //     }      
-            // }  
+                }      
+            }  
         
-            // if($("#animal_care").val() == ''){
-            //     alert('Do you use/care for animals as part of your current daily work schedule?');
-            //     $("#animal_care").focus();
-            //     return false;  
-            // }
+            if($("#animal_care").val() == ''){
+                alert('Do you use/care for animals as part of your current daily work schedule?');
+                $("#animal_care").focus();
+                return false;  
+            }
     
-            // if($("#animal_care").val() == 'yes'){
-            //     if($("#animal_type").val() == ''){
-            //         alert('Please indicate type(s) of animals.');
-            //         $("#animal_type").focus();
-            //         return false;  
-            //     }
-            // }
+            if($("#animal_care").val() == 'yes'){
+                if($("#animal_type").val() == ''){
+                    alert('Please indicate type(s) of animals.');
+                    $("#animal_type").focus();
+                    return false;  
+                }
+            }
 
-            // if($("#animal_care").val() == 'no'){
-            //     if($("#statement_of_interest").val() == ''){
-            //         alert('If NO, please provide a statement of your interest in laboratory animals.');
-            //         $("#statement_of_interest").focus();
-            //         return false;  
-            //     }
-            // }
+            if($("#animal_care").val() == 'no'){
+                if($("#statement_of_interest").val() == ''){
+                    alert('If NO, please provide a statement of your interest in laboratory animals.');
+                    $("#statement_of_interest").focus();
+                    return false;  
+                }
+            }
 
-            // if($("#care_laboratory_animals").val() == ''){
-            //     alert('Have you used/cared for laboratory animals as part of your daily work?');
-            //     $("#care_laboratory_animals").focus();
-            //     return false;    
-            //     }   
-            //     if($("#care_laboratory_animals").val() == 'yes'){
-            //         if($("#animal_care_details").val() == ''){
-            //             alert('please state Institution, Place and dates for animal care');
-            //             $("#animal_care_details").focus();
-            //             return false;
-            //         }   
-            //     }   
-            //     if($("#attended_laboratory_animal").val() == ''){
-            //         alert('Have attended any laboratory animal welfare training?');
-            //         $("#attended_laboratory_animal").focus();
-            //         return false;
+            if($("#care_laboratory_animals").val() == ''){
+                alert('Have you used/cared for laboratory animals as part of your daily work?');
+                $("#care_laboratory_animals").focus();
+                return false;    
+                }   
+                if($("#care_laboratory_animals").val() == 'yes'){
+                    if($("#animal_care_details").val() == ''){
+                        alert('please state Institution, Place and dates for animal care');
+                        $("#animal_care_details").focus();
+                        return false;
+                    }   
+                }   
+                if($("#attended_laboratory_animal").val() == ''){
+                    alert('Have attended any laboratory animal welfare training?');
+                    $("#attended_laboratory_animal").focus();
+                    return false;
                     
-            //     }   
-            //     if($("#attended_laboratory_animal").val() == 'yes'){
-            //         if($("#animal_welfare_training_details").val() == ''){
-            //             alert('please state below event,date and place');
-            //             $("#animal_welfare_training_details").focus();
-            //             return false;
-            //         }
+                }   
+                if($("#attended_laboratory_animal").val() == 'yes'){
+                    if($("#animal_welfare_training_details").val() == ''){
+                        alert('please state below event,date and place');
+                        $("#animal_welfare_training_details").focus();
+                        return false;
+                    }
                     
-            //     }   
-            //     if($("#institution_animal_facitlity").val() == ''){
-            //         alert('Does your Institution have an animal facility?');
-            //         $("#institution_animal_facitlity").focus();
-            //         return false;
+                }   
+                if($("#institution_animal_facitlity").val() == ''){
+                    alert('Does your Institution have an animal facility?');
+                    $("#institution_animal_facitlity").focus();
+                    return false;
                     
-            //     } 
-            //     if($("#fullNames1").val() == ''){
-            //         alert('Referee fullname is required');
-            //         $("#fullNames1").focus();
-            //         return false;
-            //     }
-            //     if($("#emailAddress1").val() == '' ||  !emailPattern.test($("#emailAddress1").val())){
-            //         alert('Referee email must be valid');
-            //         $("#emailAddress1").focus();
-            //         return false;
-            //     }
-            //     if($("#telephone1").val() == ''){
-            //         alert('Referee telephone is required');
-            //         $("#telephone1").focus();
-            //         return false;
-            //     }
-            //     if($("#fullNames2").val() == ''){
-            //         alert('Referee fullname is required');
-            //         $("#fullNames2").focus();
-            //         return false;
-            //     }
-            //     if($("#emailAddress2").val() == '' || !emailPattern.test($("#emailAddress2").val())){
-            //         alert('Referee email must be valid');
-            //         $("#emailAddress2").focus();
-            //         return false;
-            //     }
-            //     if($("#telephone2").val() == ''){
-            //         alert('Referee telephone is required');
-            //         $("#telephone2").focus();
-            //         return false;
-            //     }
-            //     if($("#curriculum_vitae_file")[0].files.length == 0){
-            //     alert('Curriculum vitae file is required');
-            //     $("#curriculum_vitae_file").focus();
-            //     return false;
-            //     }
-            //     if(curriculumVitaeFileAttr.type !== 'application/pdf'){
-            //         alert('Only PDF files are allowed for curriculum vitae.');
-            //         $("#curriculum_vitae_file").focus();
-            //         return false;
-            //     }
-            //     if($("#animal_welfare_file")[0].files.length == 1){
-            //         if(animalWelfareCertAttr.type !== 'application/pdf'){
-            //             alert('Only PDF files are allowed for animal welfare.');
-            //             $("#animal_welfare_file").focus();
-            //             return false;
-            //         }
-            //     }
-            //     if($("#representative_file1")[0].files.length == 1){
-            //         if(representativePub1Attr.type !== 'application/pdf'){
-            //             alert('Only PDF files are allowed for representative publication 1.');
-            //             $("#representative_file1").focus();
-            //             return false;
-            //         }
-            //     }
+                } 
+                if($("#fullNames1").val() == ''){
+                    alert('Referee fullname is required');
+                    $("#fullNames1").focus();
+                    return false;
+                }
+                if($("#emailAddress1").val() == '' ||  !emailPattern.test($("#emailAddress1").val())){
+                    alert('Referee email must be valid');
+                    $("#emailAddress1").focus();
+                    return false;
+                }
+                if($("#telephone1").val() == ''){
+                    alert('Referee telephone is required');
+                    $("#telephone1").focus();
+                    return false;
+                }
+                if($("#fullNames2").val() == ''){
+                    alert('Referee fullname is required');
+                    $("#fullNames2").focus();
+                    return false;
+                }
+                if($("#emailAddress2").val() == '' || !emailPattern.test($("#emailAddress2").val())){
+                    alert('Referee email must be valid');
+                    $("#emailAddress2").focus();
+                    return false;
+                }
+                if($("#telephone2").val() == ''){
+                    alert('Referee telephone is required');
+                    $("#telephone2").focus();
+                    return false;
+                }
+                if($("#curriculum_vitae_file")[0].files.length == 0){
+                alert('Curriculum vitae file is required');
+                $("#curriculum_vitae_file").focus();
+                return false;
+                }
+                if(curriculumVitaeFileAttr.type !== 'application/pdf'){
+                    alert('Only PDF files are allowed for curriculum vitae.');
+                    $("#curriculum_vitae_file").focus();
+                    return false;
+                }
+                if($("#animal_welfare_file")[0].files.length == 1){
+                    if(animalWelfareCertAttr.type !== 'application/pdf'){
+                        alert('Only PDF files are allowed for animal welfare.');
+                        $("#animal_welfare_file").focus();
+                        return false;
+                    }
+                }
+                if($("#representative_file1")[0].files.length == 1){
+                    if(representativePub1Attr.type !== 'application/pdf'){
+                        alert('Only PDF files are allowed for representative publication 1.');
+                        $("#representative_file1").focus();
+                        return false;
+                    }
+                }
                 
-            //     if($("#representative_file2")[0].files.length == 1){
-            //         if(representativePub2Attr.type !== 'application/pdf'){
-            //             alert('Only PDF files are allowed for representative publication 2.');
-            //             $("#representative_file2").focus();
-            //             return false;
-            //         }
-            //     }
-            //     if($("#declaration").val() == ''){
-            //         alert('Your Application Declaration.');
-            //         $("#declaration").focus();
-            //         return false;
-            //     }
+                if($("#representative_file2")[0].files.length == 1){
+                    if(representativePub2Attr.type !== 'application/pdf'){
+                        alert('Only PDF files are allowed for representative publication 2.');
+                        $("#representative_file2").focus();
+                        return false;
+                    }
+                }
+                if($("#declaration").val() == ''){
+                    alert('Your Application Declaration.');
+                    $("#declaration").focus();
+                    return false;
+                }
                 feedback = confirm("You can send us your information now");
                 if(feedback == true){
                     var data = $("form#ProcessUserInput")[0]; 	
@@ -870,17 +870,16 @@
                         contentType: false,
                         processData: false,
                         success: function(e){
-                            alert(e);
-                            // if(e == 1){
-                            //     alert("Record sent succesfully");
-                            //     clearFields();
-                            // }else if(e == -1){
-                            //     alert("Unable to send records");
-                            // }else if(e == -2){
-                            //     alert("Record exist with this email already");
-                            // }else{
-                            //     "Error occured sending file";
-                            // }
+                            if(e == 1){
+                                alert("Record sent succesfully");
+                                clearFields();
+                            }else if(e == -1){
+                                alert("Unable to send records");
+                            }else if(e == -2){
+                                alert("Record exist with this email already");
+                            }else{
+                                "Error occured sending file";
+                            }
                         }
                     });	 
                 }
@@ -905,8 +904,6 @@
                     $("#show_animal_care").append(newField);
                     $("#uncare_for_animal").remove();
                 }else if(($("#animal_care").val()) === "no"){
-                    // alert(4);
-                    // $("#show_animal_care").remove();
                     var newField = `
                         <div class="col-md-12 mb-3" id = "uncare_for_animal" style = "margin-top:25px">
                             <label>If NO, please provide a statement of your interest in laboratory animals.</label>
