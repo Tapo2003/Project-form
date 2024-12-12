@@ -10,9 +10,9 @@
         }        
     }
 
-    header('Location:vendor/reports/response.php?key=1');
-    // header('Location:vendor/fpdf186/response.php');
-    exit;
+    // header('Location:vendor/reports/response.php?key=1');
+    // // header('Location:vendor/fpdf186/response.php');
+    // exit;
 
 
 
