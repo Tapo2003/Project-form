@@ -1,7 +1,7 @@
 <?php
     extract($_POST);
-    require_once('dbconn.php');
     require_once('customemailsender.php');
+    require_once('dbconn.php');
     // session_start();
 
     //instantiating an object of the class
@@ -56,6 +56,8 @@
         }
     }
 
+
+
     $memebershipType                = ucwords(trim($memebership_type));
     $givenName                      = ucwords(trim($given_name));
     $surnName                       = ucwords(trim($sur_name));
@@ -71,7 +73,7 @@
     $address1                       = ucwords(trim($address1));
     $address2                       = ucwords(trim($address2));
     $city                           = ucwords(trim($city));
-    $town                           = ucwords(trim($town));
+    $town                           = '';
     $zip_code                       = ucwords(trim($zip_code));
     $country                        = $country;
     $mobile                         = ucwords(trim($mobile));
@@ -144,7 +146,7 @@
     $telephone2                     = ucwords(trim($telephone2));
     $declaration                     = ucwords(trim($declaration));
 
-    $sql = "SELECT * FROM member_info WHERE personal_email = '$personalEmail' || personal_email = '$workEmail'";
+    $sql = "SELECT * FROM member_info WHERE personal_email = '$personalEmail'";
     $result = mysqli_query($conn, $sql) or die(mysql_error());
     $row_count = mysqli_num_rows($result);
     if($row_count == 0){
@@ -185,7 +187,8 @@
             // Acuret section 
             $body = '<h2>Membership Form Application</h2>';
             $body .= "<p>$title $surnName had successfully responded to the membership form</p>";
-            $body .= '<p>click to <a href="http://project-form-main.test:9090/vendor/reports/response.php?email='. $personalEmail.'" target="_blank">view</a> applicant information</p>';
+            $body .= '<p>click to <a href="http://project-form-main.test:9090/printpreview.php?email='. $personalEmail.'" target="_blank">view</a> applicant information</p>';
+            // $body .= '<p>click to <a href="http://project-form-main.test:9090/vendor/reports/response.php?email='. $personalEmail.'" target="_blank">view</a> applicant information</p>';
             // $body .= '<p>click to <a href="https://jaytec.com.ng/membership-form/vendor/reports/response.php?email='. $personalEmail.'" target="_blank">view</a> applicant information</p>';
             $emaildata = array(
                 'smtphost'=> 'mail.jaytec.com.ng',
@@ -193,8 +196,8 @@
                 'password'=> 'Acuret@2024',
                 'from'=> 'acuret@jaytec.com.ng',
                 'organization'=> 'Acuret',
-                'to'=> 'acuret.org@gmail.com',
-                // 'to'=> 'abimbolaoladunni8429@gmail.com',
+                // 'to'=> 'acuret.org@gmail.com',
+                'to'=> 'abimbolaoladunni8429@gmail.com',
                 'toname'=> 'Acuret Admin',
                 'subject'=> 'Membership Form Application Acknowledgement',
                 'body'=> $body,

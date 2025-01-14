@@ -11,6 +11,13 @@
             $mail = new PHPMailer(true); 
             // Enable exceptions for error handling
             try {
+
+                // Enable debugging and log output
+                // $mail->SMTPDebug = 3; // Enable verbose debug output (0 = off, 1 = errors, 2 = verbose, 3 = detailed)
+                // $mail->Debugoutput = function ($str, $level) {
+                //     file_put_contents('phpmailer_debug.log', date('Y-m-d H:i:s') . " [{$level}]: {$str}\n", FILE_APPEND);
+                // };
+
                 // Server settings
                 $mail->isSMTP();                                   
                 $mail->Host       = $getemaildata['smtphost'];            

@@ -3,7 +3,7 @@
 	session_start();
 	require_once('../../dbconn.php');
 	$personalEmail = $_GET['email'];
-    $sql = "SELECT * FROM member_info WHERE personal_email = '$personalEmail' || personal_email = '$workEmail'";
+    $sql = "SELECT * FROM member_info WHERE personal_email = '$personalEmail' || work_email = '$personalEmail'";
     $result = mysqli_query($conn, $sql) or die(mysql_error());
     
 	$row = mysqli_fetch_assoc($result);  
@@ -165,7 +165,7 @@
 	$pdf->SetFont('times','b',10);
 	$pdf->Text(116,92,"Work phone:");
 	$pdf->SetFont('times','',10);
-	$pdf->Text(138,92,$row['home']);
+	$pdf->Text(138,92,$row['member_info_work']);
 
 	$pdf->SetFont('times','b',10);
 	$pdf->Text(113,99,"Personal email:");

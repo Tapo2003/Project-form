@@ -10,10 +10,13 @@
         }        
     }
 
-    // header('Location:vendor/reports/response.php?key=1');
-    // // header('Location:vendor/fpdf186/response.php');
+    // header('Location:vendor/reports/response.php?email=abimbolaoladunni8429@gmail.com');
+    // header('Location:vendor/fpdf186/response.php');
+    // header('Location:printpreview.php?email=abimbolaoladunni8429@gmail.com');
     // exit;
 
+
+    
 
 
 
@@ -58,7 +61,7 @@
                      <div class="iq-card" style = "">
                         <div class="iq-card-body">
 
-                            <h3 style = "text-align:center;margin-top:30px;margin-bottom:20px;font-weight:bold;color:red">ACURET Membership Application FORM</h3>  
+                            <h3 style = "text-align:center;margin-top:30px;margin-bottom:20px;font-weight:bold;color:red">ACURET Membership Application FORM </h3>  
 
                             <form id = "ProcessUserInput" class= "ProcessUserInput">
 
@@ -91,7 +94,7 @@
                                         <select class="form-control form-control-sm mb-3" id = "memebership_type" name = "memebership_type" style = "height:45px;" required>
                                             <option selected=""></option>
                                             <option value="Student">Student</option>
-                                            <option value="Ordinary">Ordinary</option>
+                                            <option value="Full">Full</option>
                                             <option value="Associate">Associate</option>
                                             <option value="Institutional">Institutional</option>
                                         </select>
@@ -118,7 +121,7 @@
                                     </div>
                                 </div> 
 
-                              <div class="iq-card-body" style='margin-top:-15px'>
+                              <!-- <div class="iq-card-body" style='margin-top:-15px'>
                                  <p style='margin-bottom:5px;'>Gender <span style='color:red'>*</span></p>
                                  <div class="custom-control custom-radio custom-control-inline">
                                     <input type="radio" id="male" name="gender" class="custom-control-input" value = "male">
@@ -130,12 +133,32 @@
                                        Female </label>
                                  </div>
                                  
+                              </div> -->
+
+                              <div class="form-row">
+                                <div class="col-md-6 md-3">
+                                    <p for="">Gender<span style='color:red'>*</span></p>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="male" name="gender" class="custom-control-input" value = "male">
+                                        <label class="custom-control-label" for="male"> Male </label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="female" name="gender" class="custom-control-input" value = "female">
+                                        <label class="custom-control-label" for="female"> 
+                                        Female </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 md-3" >
+                                    <label>City/Town<span style='color:red'>*</span></label>
+                                    <input type="text" id="city" name='city' style = "height:45px;margin-bottom:10px;" class="form-control" value='' required>
+                                </div>
                               </div>
 
                               <div class="form-row">
                                 <div class="col-md-6 md-3">
-                                    <label for="exampleInputdate">Date of Birth<span style='color:red'>*</span></label>
-                                    <input type="date" class="form-control" id="date_of_birth"  name = "date_of_birth" style = "height:45px;margin-bottom:10px;" required/>
+                                    <label for="exampleInputdate">Date of Birth<span style='color:red;font-weight:bold'> (dd-mm-yyyy)*</span></label>
+                                    <input type="text" class="form-control" id="date_of_birth"  name = "date_of_birth" style = "height:45px;margin-bottom:10px;" required/>
                                  </div>
 
                                  <div class="col-md-6 md-3" >
@@ -179,7 +202,7 @@
                                 </div> 
                               </div>
 
-                              <div class="form-row">
+                              <!-- <div class="form-row">
                                 <div class="col-md-6 md-3">
                                     <label>City <span style='color:red'>*</span></label>
                                     <input type="text" class="form-control" id ="city" name = "city" required value=''>
@@ -188,7 +211,7 @@
                                     <label>Town <span style='color:red'>*</span></label>
                                     <input type="text" class="form-control" id ="town" name = "town" required value=''>
                                 </div> 
-                              </div>
+                              </div> -->
 
                               <div class="form-row">
                                 <div class="col-md-6 md-3">
@@ -276,8 +299,8 @@
                               
                               <div class="form-row">
                                 <div class="col-md-6 md-3">
-                                    <label for="exampleInputdate">Year of Graduation <span style='color:red'>*</span></label>
-                                    <input type="date" class="form-control" id="yearOfGraduation1" name = "yearOfGraduation[]" required/>
+                                    <label for="exampleInputdate">Year of Graduation <span style='color:red;font-weight:bold'> (dd-mm-yyyy)*</span></label>
+                                    <input type="text" class="form-control" id="yearOfGraduation1" name = "yearOfGraduation[]" required/>
                                  </div>
                                 <div class="col-md-6 md-3">
                                     <label for="exampleInputdate">Degree <span style='color:red'>*</span></label>
@@ -295,7 +318,7 @@
                                     </div>                                    
                                 </div>
                               
-                              <div class="form-row">
+                                <div class="form-row">
                                     <div class="col-md-12 md-3">
                                         <label>Other Qualifications and/or Fellowship.</label>
                                         <input type="text" class="form-control" id ="other_qualifications" name = "other_qualifications" required value=''>
@@ -304,7 +327,7 @@
                                     <div class="col-md-12 md-3">
                                         <br><label>Are you currently undertaking study/training?<span style='color:red'>*</span></label>
                                         <select class="form-control form-control-sm mb-3" style = "height:40px" id = "current_undertaking_status" name = "current_undertaking_status" required>
-                                            <option selected="Yes/No"></option>
+                                            <option selected=""></option>
                                             <option value="yes">Yes</option>
                                             <option value="no">No</option>
                                         </select>
@@ -317,7 +340,7 @@
                                     <div class="col-md-12 md-3" style='margin-top:10px'>
                                         <label>Do you use/care for animals as part of your current daily work schedule?<span style='color:red'>*</span></label>
                                         <select class="form-control form-control-sm mb-3" style = "height:40px" id = "animal_care" name = "animal_care" required>
-                                            <option selected="Yes/No"></option>
+                                            <option selected=""></option>
                                             <option value="yes">Yes</option>
                                             <option value="no">No</option>
                                         </select>
@@ -342,7 +365,7 @@
                                         <label>Have you used/cared for laboratory animals as part of your daily work schedule in the 
                                         past?<span style='color:red'>*</span></label>
                                         <select class="form-control form-control-sm mb-3" style = "height:40px" id = "care_laboratory_animals" name = "care_laboratory_animals" required>
-                                            <option selected="Yes/No"></option>
+                                            <option selected=""></option>
                                             <option value="yes">Yes</option>
                                             <option value="no">No</option>
                                         </select>
@@ -358,8 +381,9 @@
 
                                     <div class="col-md-12 md-3">
                                         <label>Have you attended any laboratory animal welfare training?<span style='color:red'>*</span></label>
+                                        <input type='hidden' id='fileCounterTag' name='fileCounterTag' value='4'>
                                         <select class="form-control form-control-sm mb-3" style = "height:40px" id = "attended_laboratory_animal" name = "attended_laboratory_animal" required>
-                                            <option selected="Yes/No"></option>
+                                            <option selected=""></option>
                                             <option value="yes">Yes</option>
                                             <option value="no">No</option>
                                         </select>
@@ -375,7 +399,7 @@
                                     <div class="col-md-12 md-3">
                                         <label>Does your Institution have an animal facility? <span style='color:red'>*</span></label>
                                         <select class="form-control form-control-sm mb-3" style = "height:40px" id = "institution_animal_facitlity" name = "institution_animal_facitlity" required>
-                                            <option selected="Yes/No"></option>
+                                            <option selected=""></option>
                                             <option value="yes">Yes</option>
                                             <option value="no">No</option>
                                         </select>
@@ -443,7 +467,7 @@
 
                                 <br><div class="form-row">
                                     <div class="col">
-                                       <p style = "font-weight:bold;color:black">Current and updated Curriculum Vitae <span style = "color:red">(required)</span></p>
+                                       <p style = "font-weight:bold;color:black">Current and updated Curriculum Vitae <span style = "color:red" id='cvuploadstatus'>(required)</span></p>
                                        <div class="custom-file">
                                        <input type="hidden" id="curriculum_hidden_tag" name="curriculum_hidden_tag" value="F">
                                        <input type="file" class="custom-file-input" id="curriculum_vitae_file" name="files[]" onchange= "addCurriculumVitae()">
@@ -451,7 +475,7 @@
                                     </div>
                                  </div>
                                  <div class="col">
-                                       <p style = "font-weight:bold;color:black">Animal welfare training certificates<span style = "color:red"> (not required)</span></p>
+                                       <p style = "font-weight:bold;color:black">Animal welfare training certificates<span style = "color:red" id='animalwelfaretraininguploadstatus'> (not required)</span></p>
                                        <div class="custom-file">
                                        <input type="hidden" id="animal_welfare_hidden_tag" name="animal_welfare_hidden_tag">
                                        <input type="file" class="custom-file-input" id="animal_welfare_file" name="files[]" onchange = "addWelfareTraining()">
@@ -462,7 +486,7 @@
 
                                 <br><div class="form-row">
                                  <div class="col">
-                                        <p style = "font-weight:bold;color:black">Representative publications 1 <span style = "color:red">(not required)</span></p>
+                                        <p style = "font-weight:bold;color:black">Representative publications 1 <span style = "color:red" id='reppub1uploadstatus'>(not required)</span></p>
                                        <div class="custom-file">
                                        <input type="hidden" id="publication_hidden_tag1" name="publication_hidden_tag1" value="F">
                                        <input type="file" class="custom-file-input" id="representative_file1" name="files[]" onchange = "representativePublications1()">
@@ -470,7 +494,7 @@
                                     </div>
                                  </div>
                                  <div class="col">
-                                        <p style = "font-weight:bold;color:black">Representative publications 2<span style = "color:red"> (not required)</span></p>
+                                        <p style = "font-weight:bold;color:black">Representative publications 2<span style = "color:red" id='reppub2uploadstatus'> (not required)</span></p>
                                        <div class="custom-file">
                                        <input type="hidden" id="publication_hidden_tag2" name="publication_hidden_tag2">
                                        <input type="file" class="custom-file-input" id="representative_file2" name="files[]" onchange = "representativePublications2()">
@@ -610,6 +634,12 @@
                 return false;
             }
 
+            if($("#city").val() == ''){
+                alert('City/town is required');
+                $("#city").focus();
+                return false;
+            }            
+
             if($("#date_of_birth").val() == ''){
                 alert('Date of birth is required');
                 $("#date_of_birth").focus();
@@ -658,17 +688,13 @@
                 return false;
             }
 
-            if($("#city").val() == ''){
-                alert('City is required');
-                $("#city").focus();
-                return false;
-            }
 
-            if($("#town").val() == ''){
-                alert('Town is required');
-                $("#town").focus();
-                return false;
-            }
+
+            // if($("#town").val() == ''){
+            //     alert('Town is required');
+            //     $("#town").focus();
+            //     return false;
+            // }
 
             if($("#zip_code").val() == ''){
                 alert('Zip code is required');
@@ -682,13 +708,13 @@
                 return false;
             }
 
-            if($("#mobile").val() == '' || $("#home").val() == '' || $("#work").val() == ''){
+            if($("#mobile").val() == '' && $("#home").val() == '' && $("#work").val() == ''){
                 alert('At least one of the telephone number field is required');
                 $("#mobile").focus();
                 return false;
             }      
 
-            if($("#personal_email").val() == '' || $("#work_email").val() == ''){
+            if($("#personal_email").val() == '' && $("#work_email").val() == ''){
                 alert('At least one of the email address field is required');
                 $("#personal_email").focus();
                 return false;
@@ -930,7 +956,7 @@
             }
 
             if(document.getElementById("agree").checked == false){
-                alert('You have agree to terms and condition.');
+                alert('You have to agree to terms and condition.');
                 return false;
             }
 
@@ -951,8 +977,8 @@
                         console.log(e);
                         if(e == 1){
                             alert("Record sent succesfully");
-                            clearFields();
-                            location.href='index.php';
+                            // clearFields();
+                            // location.href='index.php';
                         }else if(e == -1){
                             alert("Unable to send records");
                         }else if(e == -2){
@@ -1053,13 +1079,13 @@
                             </div> 
 
                             <div class="col-md-4 md-3">
-                                <label>From <span style='color:red'>*</span></label>
-                                <input type="date" class="form-control" id="animal_care_from" name="animal_care_from" required>
+                                <label>From <span style='color:red;font-weight:bold'> (dd-mm-yyyy)*</span></label>
+                                <input type="text" class="form-control" id="animal_care_from" name="animal_care_from" required>
                             </div>
 
                             <div class="col-md-4 md-3">
-                                <label>To <span style='color:red'>*</span></label>
-                                <input type="date" class="form-control" id="animal_care_to" name="animal_care_to" required>
+                                <label>To <span style='color:red;font-weight:bold'> (dd-mm-yyyy)*</span></label>
+                                <input type="text" class="form-control" id="animal_care_to" name="animal_care_to" required>
                             </div>
                         </div>
                     </div>`;
@@ -1072,6 +1098,9 @@
             $("#attended_laboratory_animal").on("change", function(){
                 var attended_laboratory_animal = $(this).val();
                 if(attended_laboratory_animal == 'yes'){
+
+                    $("#fileCounterTag").val(5);
+
                     var newField =
                     `<div class="" id = "used_care_laboratory">
                         <p>If YES, please state below and upload your Certificate as supporting document <span style='color:red'>*</span></p>  
@@ -1083,8 +1112,8 @@
                             </div> 
 
                             <div class="col-md-6 md-3">
-                                <label>Date <span style='color:red'>*</span></label>
-                                <input type="date" class="form-control" id="animal_welfare_training_details_date" name="animal_welfare_training_details_date" required>
+                                <label>Date <span style='color:red;font-weight:bold'> (dd-mm-yyyy)*</span></label>
+                                <input type="text" class="form-control" id="animal_welfare_training_details_date" name="animal_welfare_training_details_date" required>
                             </div>
                         </div>     
 
@@ -1095,7 +1124,7 @@
                             </div> 
 
                             <div class="col-md-6 md-3">
-                                <p style = "font-weight:bold;color:black">Supporting document <span style = "color:red">(required)</span></p>
+                                <p style = "font-weight:bold;color:black">Supporting document <span style = "color:red" id='labanimalwelfarecertuploadstatus'>(required)</span></p>
                                 <div class="custom-file">
                                     <input type="hidden" id="animal_welfare_training_details_hidden_tag" name="animal_welfare_training_details_hidden_tag" value="F">
                                     <input type="file" class="custom-file-input" id="animal_welfare_training_details_file" name="files[]" onchange= "addLabAnimalWelfareTraining()">
@@ -1108,8 +1137,10 @@
                     $("#used_care_laboratory_form").append(newField);
                 }else if(attended_laboratory_animal == 'no'){
                     $("#used_care_laboratory").remove();
+                    $("#fileCounterTag").val(4);                    
                 }else{
                     $("#used_care_laboratory").remove();
+                    $("#fileCounterTag").val(4);                        
                 }
             });                                         
         }
@@ -1120,6 +1151,7 @@
                 $("#animal_welfare_training_details_hidden_tag").val('T');
                 var formData = new FormData($("#ProcessUserInput")[0]);
                 formData.append('index', 0);
+                formData.append('fileCounterTag', 5);
                 $.ajax({
                     url: "uploadFile.php",
                     type: 'POST',
@@ -1130,6 +1162,8 @@
                     processData: false,
                     success:function(data)
                     { 
+                        $("#labanimalwelfarecertuploadstatus").text('(Supporting document attached)');
+                        $("#labanimalwelfarecertuploadstatus").css('color', 'blue');                             
                         console.log(data);
                     },
                     error:function(data)
@@ -1148,7 +1182,15 @@
             if(fileType == 'application/pdf'){
                 $("#curriculum_hidden_tag").val('T');
                 var formData = new FormData($("#ProcessUserInput")[0]);
-                formData.append('index', 1);
+                if($("#fileCounterTag").val() == 4){
+                    index = 0;
+                    fileCounterTag = 4
+                }else{
+                    index = 1;
+                    fileCounterTag = 5                    
+                }
+                formData.append('index', index);
+                formData.append('fileCounterTag', fileCounterTag);
                 $.ajax({
                     url: "uploadFile.php",
                     type: 'POST',
@@ -1159,6 +1201,8 @@
                     processData: false,
                     success:function(data)
                     { 
+                        $("#cvuploadstatus").text('(Curriculum vitae attached)'); 
+                        $("#cvuploadstatus").css('color','blue');                                                    
                         console.log(data);
                     },
                     error:function(data)
@@ -1177,7 +1221,15 @@
             if(fileType == 'application/pdf'){
                 $("#animal_welfare_hidden_tag").val('T');
                 var formData = new FormData($("#ProcessUserInput")[0]);
-                formData.append('index', 2);
+                if($("#fileCounterTag").val() == 4){
+                    index = 1;
+                    fileCounterTag = 4                    
+                }else{
+                    index = 2;
+                    fileCounterTag = 5                    
+                }
+                formData.append('index', index);   
+                formData.append('fileCounterTag', fileCounterTag);                             
                 $.ajax({
                     url: "uploadFile.php",
                     type: 'POST',
@@ -1188,6 +1240,8 @@
                     processData: false,
                     success:function(data)
                     { 
+                        $("#animalwelfaretraininguploadstatus").text('(Animal welfare training certificate attached)');   
+                        $("#animalwelfaretraininguploadstatus").css('color', 'blue');                                                  
                         console.log(data);
                     },
                     error:function(data)
@@ -1206,7 +1260,15 @@
             if(fileType == 'application/pdf'){
                 $("#publication_hidden_tag1").val('T');
                 var formData = new FormData($("#ProcessUserInput")[0]);
-                formData.append('index', 3);
+                if($("#fileCounterTag").val() == 4){
+                    index = 2;
+                    fileCounterTag = 4                    
+                }else{
+                    index = 3;
+                    fileCounterTag = 5                    
+                }
+                formData.append('index', index);  
+                formData.append('fileCounterTag', fileCounterTag);                              
                 $.ajax({
                     url: "uploadFile.php",
                     type: 'POST',
@@ -1217,6 +1279,8 @@
                     processData: false,
                     success:function(data)
                     { 
+                        $("#reppub1uploadstatus").text('(Representative publication 1 attached)');        
+                        $("#reppub1uploadstatus").css('color', 'blue');                                             
                         console.log(data);
                     },
                     error:function(data)
@@ -1235,7 +1299,15 @@
             if(fileType == 'application/pdf'){
                 $("#publication_hidden_tag2").val('T');
                 var formData = new FormData($("#ProcessUserInput")[0]);
-                formData.append('index', 4);
+                if($("#fileCounterTag").val() == 4){
+                    index = 3;
+                    fileCounterTag = 4                    
+                }else{
+                    index = 4;
+                    fileCounterTag = 5                    
+                }
+                formData.append('index', index); 
+                formData.append('fileCounterTag', fileCounterTag);                               
                 $.ajax({
                     url: "uploadFile.php",
                     type: 'POST',
@@ -1246,6 +1318,10 @@
                     processData: false,
                     success:function(data)
                     { 
+                        $("#reppub2uploadstatus").text('(Representative publication 2 attached)');     
+                        $("#reppub2uploadstatus").css('color', 'blue');     
+
+                        console.log(data);                        
                     },
                     error:function(data)
                     {
@@ -1297,8 +1373,8 @@
 
                     <div class="form-row">
                         <div class="col-md-6 md-3">
-                            <label for="exampleInputdate">Year of Graduation</label>
-                            <input type="date" class="form-control" id="yearOfGraduation${counter}" name="yearOfGraduation[]"/>
+                            <label for="exampleInputdate">Year of Graduation<span style='color:red;font-weight:bold'> (dd-mm-yyyy)*</span></label>
+                            <input type="text" class="form-control" id="yearOfGraduation${counter}" name="yearOfGraduation[]"/>
                         </div>
 
                         <div class="col-md-6 md-3">
@@ -1317,9 +1393,9 @@
             $(`#educationField${counter}`).remove();
         }
 
-        function clearFields(){
-            $("#courseTitle").val("");
-        }
+        // function clearFields(){
+        //     $("#courseTitle").val("");
+        // }
 
       </script>
 
